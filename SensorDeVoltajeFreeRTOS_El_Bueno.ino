@@ -1,4 +1,7 @@
 /*     
+ *     Desarrollado por: IG: When42
+ *     27/04/2023
+ *
  *     Código para utilizar el medidor de voltaje ZMPT101B con el microcontrolador ESP32 y 
  *     el sistema FreeRTOS mostrando la lectura de voltaje en el puerto serie 
  *     actualizandola cada 5 segundos. 
@@ -61,7 +64,8 @@ void loop() {
 void LecturaSensor(void* Parametro) {
   pinMode(PinADCSensor1, INPUT); //Se establece el Pin ADC como entrada.
 
-//Bucle infinito para leer la señal analógica del sensor.
+//Bucle infinito para leer la señal analógica del sensor y realizar las operaciones descritas al inicio, 
+//el nombre de las variables ayudará a su comprensión.
   while (true) {
     int ValorDeSensor = analogRead(PinADCSensor1);
     SumatoriaLecturas += ValorDeSensor;
